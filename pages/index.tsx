@@ -8,7 +8,7 @@ export default function Home() {
   const [password, setPassword] = useState<string>('')
   const [loggedIn, setloggedIn] = useState<boolean>(false)
   const [message, setMessage] = useState<string>('')
-
+  
   const submitForm = async (e) => {
     e.preventDefault();
     const res = await fetch('/api/login', {

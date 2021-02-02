@@ -4,6 +4,7 @@ export default class CustomDocument extends Document{
     render() {
         return <Html>
             <Head>
+                <title>Next.ts</title>
                 <meta content='check' property='custom' />
             </Head>
             <body>
