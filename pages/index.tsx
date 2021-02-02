@@ -31,13 +31,16 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {loggedIn ? message : <form>
-        <input placeholder='Username' autoComplete={'off'} name='username' value={username} onChange={(prop)=>setUsername(prop.target.value)} type='text' />
-        <br/>
-        <input placeholder='Password' name='password' value={password} onChange={(prop)=>setPassword(prop.target.value)} type='password' />
-        <br />
-        <button onClick={submitForm}>Login</button>
-      </form>}
+      {loggedIn ? message : <div className={styles.form}>
+        <h4 className={styles.heading}>Next.Ts</h4>
+        <form>
+          <input className={styles.input} placeholder='Username' autoComplete={'off'} name='username' value={username} onChange={(prop)=>setUsername(prop.target.value)} type='text' />
+          <br/>
+          <input className={styles.input} placeholder='Password' name='password' value={password} onChange={(prop)=>setPassword(prop.target.value)} type='password' />
+          <br />
+          <button onClick={submitForm}>Login</button>
+        </form>
+      </div>}
     </div>
   )
 }
