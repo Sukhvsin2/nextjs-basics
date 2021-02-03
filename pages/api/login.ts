@@ -15,7 +15,5 @@ export default function (req: NextApiRequest, res: NextApiResponse) {
             admin: username === 'admin' && password === 'admin'
         }, KEY)
     })
-
-    res.status(200).json({message: 'OK'})
     
 }

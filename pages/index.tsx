@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styles from '../styles/index.module.scss'
 import jwt from 'jsonwebtoken'
+import Head from 'next/head'
 
 export default function Home() {
 
@@ -30,17 +31,22 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
-      {loggedIn ? message : <div className={styles.form}>
-        <h4 className={styles.heading}>Next.Ts</h4>
-        <form>
-          <input className={styles.input} placeholder='Username' autoComplete={'off'} name='username' value={username} onChange={(prop)=>setUsername(prop.target.value)} type='text' />
-          <br/>
-          <input className={styles.input} placeholder='Password' name='password' value={password} onChange={(prop)=>setPassword(prop.target.value)} type='password' />
-          <br />
-          <button onClick={submitForm}>Login</button>
-        </form>
-      </div>}
-    </div>
+    <>
+      <Head>
+        <title>Next.ts</title>
+      </Head>
+      <div className={styles.container}>
+        {loggedIn ? message : <div className={styles.form}>
+          <h4 className={styles.heading}>Next.Ts</h4>
+          <form>
+            <input className={styles.input} placeholder='Username' autoComplete={'off'} name='username' value={username} onChange={(prop)=>setUsername(prop.target.value)} type='text' />
+            <br/>
+            <input className={styles.input} placeholder='Password' name='password' value={password} onChange={(prop)=>setPassword(prop.target.value)} type='password' />
+            <br />
+            <button onClick={submitForm}>Login</button>
+          </form>
+        </div>}
+      </div>
+    </>
   )
 }
